@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={clsx(inter.className, "bg-background h-full")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar appName="X Y" menuItems={menuItems} />
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
