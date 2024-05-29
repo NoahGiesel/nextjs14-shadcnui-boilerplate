@@ -1,5 +1,5 @@
 import { EditIventoryItem } from "@/components/modals/inventory/edit-inventory-item";
-import { Button } from "@/components/ui";
+import { ToolTip } from "@/components/tooltip";
 import { DATE_FORMAT } from "@/src/constants";
 import { Inventory } from "@/src/types";
 import { ColumnDef } from "@tanstack/react-table";
@@ -21,7 +21,7 @@ export const inventoryColumn: ColumnDef<Inventory>[] = [
     ), */
     header: "Actions",
     cell: ({ row }) => (
-      <div className="flex items-center">
+      <div className="flex items-center space-x-3">
         <EditIventoryItem
           initialValue={{
             // id: row.getValue("id"),
@@ -36,9 +36,9 @@ export const inventoryColumn: ColumnDef<Inventory>[] = [
             // category: row.getValue("category"),
           }}
         />
-        <Button variant="ghost" onClick={() => alert(row.getValue("id"))}>
-          <Trash2 size={16} className="cursor-pointer" />
-        </Button>
+        <ToolTip content="Delete">
+          <Trash2 size={16} className="cursor-pointer hover:opacity-70" color="#db5461" onClick={() => alert(row.getValue("id"))} />
+        </ToolTip>
       </div>
       /*  <Checkbox
         checked={row.getIsSelected()}

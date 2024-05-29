@@ -6,6 +6,7 @@ import { Inventory } from "@/src/types";
 import { ENDPOINT_URL } from "@/src/constants";
 import { Edit } from "lucide-react";
 import { InventoryItemModalBody } from "./inventory-body";
+import { ToolTip } from "@/components/tooltip";
 
 interface EditIventoryItemProps {
   initialValue: Inventory;
@@ -33,9 +34,9 @@ const EditIventoryItem: React.FC<EditIventoryItemProps> = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
-        <Button variant="ghost">
-          <Edit size={15} className="cursor-pointer" />
-        </Button>
+        <ToolTip content="Edit">
+          <Edit size={15} className="cursor-pointer hover:opacity-70" />
+        </ToolTip>
       </DialogTrigger>
       <DialogContent>
         <InventoryItemModalBody
