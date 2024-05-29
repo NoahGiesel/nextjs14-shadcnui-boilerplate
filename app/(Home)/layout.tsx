@@ -2,10 +2,9 @@ import "../globals.css";
 
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import Navbar from "@/components/feature/layout/navbar/navbar";
 import { ThemeProvider } from "@/src/theme/ThemeProvider";
 import clsx from "clsx";
-import menuItems from '@/src/data/navItem.json';
+import { StoreProvider } from "@/src/store/store-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={clsx(inter.className, "bg-background h-full")}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en" className="h-full">
+        <body className={clsx(inter.className, "bg-background h-full")}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {/* <Navbar /> */}
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
