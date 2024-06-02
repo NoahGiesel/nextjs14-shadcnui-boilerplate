@@ -31,11 +31,11 @@ const InventoryItemModalBody: React.FC<InventoryItemModalBodyProps> = ({
     <div>
       <DialogHeader>
         <div className="space-y-6">
-          <DialogTitle>Let&apos;s add a new content</DialogTitle>
-          <DialogDescription className="italic">
+          <DialogTitle className="text-xl font-bold">New Item</DialogTitle>
+          {/* <DialogDescription className="italic">
             Inventory evolution: introducing a new item to expand and refine the
             inventory.
-          </DialogDescription>
+          </DialogDescription> */}
           <div>
             <p className="font-bold mb-1">Item Name:</p>
             <Input

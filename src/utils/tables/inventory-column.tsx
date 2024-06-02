@@ -4,7 +4,7 @@ import { DATE_FORMAT } from "@/src/constants";
 import { Inventory } from "@/src/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
-import { Trash2 } from "lucide-react";
+import { Trash } from "lucide-react";
 
 export const inventoryColumn: ColumnDef<Inventory>[] = [
   {
@@ -37,7 +37,7 @@ export const inventoryColumn: ColumnDef<Inventory>[] = [
           }}
         />
         <ToolTip content="Delete">
-          <Trash2 size={16} className="cursor-pointer hover:opacity-70" color="#db5461" onClick={() => alert(row.getValue("id"))} />
+          <Trash size={16} className="cursor-pointer hover:opacity-70" /*color="#db5461"*/ onClick={() => alert(row.getValue("id"))} />
         </ToolTip>
       </div>
       /*  <Checkbox
